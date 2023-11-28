@@ -1,0 +1,34 @@
+.container{
+    height: 813px;
+    width: 435px;
+    background-color: yellow;
+    display: flex;
+}
+.nav{
+    width: 435px;
+    height: 67px;
+    background-color: #F00;
+    display: flex;
+    justify-content: space-between;
+}
+.opcoes{
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    /* border: 1px solid black; */
+    justify-content: left;
+}
+.imagem{
+    width: 15%;
+    height: 100%;
+    background-color: #F00;
+    justify-content: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.imagem>img{
+    height: 90%;
+    width: 90%;
+}
