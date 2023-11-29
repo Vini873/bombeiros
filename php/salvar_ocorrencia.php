@@ -334,7 +334,7 @@ if (mysqli_query($conn, $sql_detalhes_viagem)) {
 
 // Receber dados do formulário ficha_anamnese_gestacional
     $tempo_gestacao = $_POST["tempoGestacao"];
-    $pre_natal = isset($_POST['flexRadioDefault7']) ? $_POST['flexRadioDefault7'] : null;
+    $pre_natal = isset($_POST['flexRadioDefault6']) ? $_POST['flexRadioDefault6'] : null;
     $nome_medico = $_POST["nomeMedico"];
     $complicacoes = isset($_POST['flexRadioDefault7']) ? $_POST['flexRadioDefault7'] : null;
     $primeiro_filho = isset($_POST['flexRadioDefault8']) ? $_POST['flexRadioDefault8'] : null;
@@ -350,40 +350,166 @@ if (mysqli_query($conn, $sql_detalhes_viagem)) {
     $bebe_sexo = isset($_POST['bebeSexo']) ? $_POST['bebeSexo'] : null;
     $bebe_nome = $_POST["bebeNome"];
 
-    // Insere os dados no banco de dados
-    $sql = "INSERT INTO ficha_anamnese_gestacional (tempoGestacao, fezPreNatal, nomeMedico, complicacoes, primeiroFilho, numFilhos, inicioContracoes, duracaoContracoes, 
+    // Insere os dados na tabela formulário ficha_anamnese_gestacional
+    $sql_gestacional = "INSERT INTO ficha_anamnese_gestacional (tempoGestacao, fezPreNatal, nomeMedico, complicacoes, primeiroFilho, numFilhos, inicioContracoes, duracaoContracoes, 
     intervaloContracoes, pressaoQuadril, rupturaBolsa, inspecaoVisual, partoRealizado, horaNascimento, bebeSexo, bebeNome) 
     VALUES ('$tempo_gestacao', '$pre_natal', '$nome_medico', '$complicacoes', '$primeiro_filho', '$num_filhos', '$inicio_contracoes', '$duracao_contracoes', 
     '$intervalo_contracoes', '$pressao_quadril', '$ruptura_bolsa', '$inspecao_visual', '$parto_realizado', '$hora_nascimento', '$bebe_sexo', '$bebe_nome')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql_gestacional) === TRUE) {
     } else {
         echo "Erro ao inserir dados: " . $conn->error;
     }
 
+// Receber dados do formulário ficha_problemas_encontrados
+    $psiquiatrico = isset($_POST['Psiquiátrico']) ? 1 : 0;
+    $obstetrico = isset($_POST['Obstetrico']) ? $_POST['Obstetrico'] : null;
+    $respiratorio = isset($_POST['Respiratorio']) ? $_POST['Respiratorio'] : null;
+    $diabetes = isset($_POST['Diabetes']) ? $_POST['Diabetes'] : null;
+    $transporte = isset($_POST['Transporte']) ? $_POST['Transporte'] : null;
+    $outros = isset($_POST['Outros']) ? $_POST['Outros'] : null;
+
+        // Insere os dados na tabela ficha_problemas_encontrados
+        $sql_problemas = "INSERT INTO ficha_problemas_encontrados (psiquiatrico, obstetrico, respiratorio, diabetes, transporte, outros) 
+        VALUES('$psiquiatrico', '$obstetrico', '$respiratorio','$diabetes','$transporte','$outros')";
+
+        if($conn->query($sql_problemas) === TRUE) {
+        }else{
+            echo "Erro ao inserir dados:". $conn->error;
+        }
+
+// Receber dados do formulário ficha_materiais_utilizados_descartavel 
+    $ataduras = $_POST['quantAtaduras'];
+    $cateter = $_POST['quantCateter'];
+    $compressa = $_POST['quantCompressa'];
+    $kit = $_POST['quantKits'];
+    $luvas = $_POST['quantLuvas'];
+    $mascara = $_POST['quantMascara'];
+    $manta = $_POST['quantManta'];
+    $pas = $_POST['quantPas'];
+    $sonda = $_POST['quantSonda'];
+    $soro = $_POST['quantSoro'];
+    $talas = $_POST['quantTalas'];
+    $outro_nome = $_POST['Outro_Mat'];
+    $outro_valor = $_POST['quantOutro'];
+
+    // Insere os dados na tabela ficha_materiais_utilizados_descartavel
+    $sql_matdesc = "INSERT INTO ficha_materiais_utilizados_descartavel (ataduras, cateter, compressa, kit, luvas, mascara, manta, pas, sonda, soro, talas, outro_nome, outro_valor) 
+    VALUES('$ataduras', '$cateter', '$compressa','$kit','$luvas','$mascara', '$manta', '$pas', '$sonda', '$soro', '$talas', '$outro_nome', '$outro_valor')";
+
+    if($conn->query($sql_matdesc) === TRUE) {
+    }else{
+        echo "Erro ao inserir dados:". $conn->error;
+    }
+
+// Receber dados do formulário ficha_materiais_utilizados_deixados 
+    $base = $_POST['quantBase'];
+    $colar1 = $_POST['QuantColar1'];
+    $colar2 = $_POST['quantColar2'];
+    $coxins = $_POST['quantCoxins'];
+    $KED = $_POST['quantKED'];
+    $maca = $_POST['quantMaca'];
+    $TTF = $_POST['quantTTF'];
+    $tirante_aranha = $_POST['quantTiranteA'];
+    $tirante_cabeca = $_POST['quantTiranteC'];
+    $canula = $_POST['quantCanula'];
+    $outro_campo1 = $_POST['Outro_Mat1'];
+    $outro_valor1 = $_POST['quantOutro1'];
+    $outro_campo2 = $_POST['Outro_Mat2'];
+    $outro_valor2 = $_POST['quantOutro2'];
+
+    // Insere os dados na tabela ficha_materiais_utilizados_deixados
+    $sql_matdeix = "INSERT INTO ficha_materiais_utilizados_deixados (base, colar1, colar2, coxins, KED, maca, TTF, tirante_aranha, tirante_cabeca, canula, outro_campo1, outro_valor1, outro_campo2, outro_valor2) 
+    VALUES('$base', '$colar1', '$colar2', '$coxins', '$KED', '$maca', '$TTF', '$tirante_aranha', '$tirante_cabeca', '$canula', '$outro_campo1', '$outro_valor1', '$outro_campo2', '$outro_valor2')";
+
+    if($conn->query($sql_matdeix) === TRUE) {
+    }else{
+        echo "Erro ao inserir dados:". $conn->error;
+    }
+
+// Receber dados do formulário ficha_anamnese_emergência_médica 
+    $que_aconteceu = isset($_POST['OqueAconteceu']) ? $_POST['OqueAconteceu'] : null;
+    $vezes_aconteceu = isset($_POST['AconteceuOutrasVezes']) ? $_POST['AconteceuOutrasVezes'] : null;
+    $tempo_aconteceu = isset($_POST['QuandoAconteceu']) ? $_POST['QuandoAconteceu'] : null;
+    $problema_saude = isset($_POST['ProblemaSaude']) ? $_POST['ProblemaSaude'] : null;
+    $qual_problema = isset($_POST['QuaisProblemas']) ? $_POST['QuaisProblemas'] : null;
+    $uso_medicacao = isset($_POST['UsoMedicacao']) ? $_POST['UsoMedicacao'] : null;
+    $horario_medicacao = isset($_POST['HorarioMedicacao']) ? $_POST['HorarioMedicacao'] : null;
+    $qual_medicacao = isset($_POST['MedicacaoQuais']) ? $_POST['MedicacaoQuais'] : null;
+    $alergico = isset($_POST['TemAlergia']) ? $_POST['TemAlergia'] : null;
+    $qual_alergia = isset($_POST['TemAlergiaQue']) ? $_POST['TemAlergiaQue'] : null;
+    $ingeriu_alimentos = isset($_POST['IngeriuAlimento']) ? $_POST['IngeriuAlimento'] : null;
+    $ingeriu_horas = isset($_POST['IngeriuAlimentoHoras']) ? $_POST['IngeriuAlimentoHoras'] : null;
+
+    // Insere os dados na tabela ficha_anamnese_emergência_médica
+    $sql_anm_medica = "INSERT INTO ficha_anamnese_emergência_médica (que_aconteceu, vezes_aconteceu, tempo_aconteceu, problema_saude, qual_problema, uso_medicacao, 
+    horario_medicacao, qual_medicacao, alergico, qual_alergia, ingeriu_alimentos,ingeriu_horas) 
+    VALUES('$que_aconteceu','$vezes_aconteceu','$tempo_aconteceu','$problema_saude','$qual_problema','$uso_medicacao','$horario_medicacao','$qual_medicacao','$alergico',
+    '$qual_alergia','$ingeriu_alimentos', '$ingeriu_horas')";
+
+    if($conn->query($sql_anm_medica) === TRUE) {
+    }else{
+        echo "Erro ao inserir dados:". $conn->error;
+    }
+
+// Receber dados do formulário ficha_procedimentos_efetuados
+ $procedimentos_efetuados = [];
+
+ $procedimentos = [
+    "Aspiracao", "Avalicao_Inicial", "Avaliacao_Dirigida", "Avaliacao_Continuada", "Chave_de_Rautek",
+    "Canula_de_Guedel", "Desobstrucao_de_VA", "Emprego_do_DEA", "Gerenciamento_de_Riscos",
+    "Limpeza_de_Ferimentos", "Curativos", "Compressivo", "Encravamento", "Ocular", "Queimadura",
+    "Simples", "3_Pontas", "Imobilacoes", "Membro_INF_dir", "Membro_INF_esq", "Membro_SUP_dir",
+    "Membro_SUP_esq", "Quadril", "Cervical", "Maca_Sobre_Rodas", "Maca_Rigida", "Ponte",
+    "Retirado_Capacete", "RCP", "Rolamento_90", "Rolamento_180", "Tomada_Decisao", "Tratado_Choque",
+    "Uso_de_Canula", "Uso_Colar", "tamColar", "Uso_KED", "Uso_TTF", "Ventilacao_Suporte", "Oxigenioterapia",
+    "Reanimador", "Reanimador_LPM", "Oxigenioterapia_LPM", "Meios_Auxiliares", "Celesc", "Def_Civil",
+    "IGP_PC", "Policia", "Policia_Value", "Samu", "Samu_Value", "CIT", "OutrosMeios"
+];
+    // Coleta os dados marcados
+foreach ($procedimentos as $procedimento) {
+    if (isset($_POST[$procedimento])) {
+        $procedimentos_efetuados[$procedimento] = 1;
+    } else {
+        $procedimentos_efetuados[$procedimento] = NULL;
+    }
+}
+
+    // Coleta os dados de texto
+    $procedimentos_efetuados['tamColar'] = isset($_POST['tamColar']) ? "'" . $conn->real_escape_string($_POST['tamColar']) . "'" : 'NULL';
+    $procedimentos_efetuados['Reanimador_LPM'] = isset($_POST['Reanimador_LPM']) ? "'" . $conn->real_escape_string($_POST['Reanimador_LPM']) . "'" : 'NULL';
+    $procedimentos_efetuados['Oxigenioterapia_LPM'] = isset($_POST['Oxigenioterapia_LPM']) ? "'" . $conn->real_escape_string($_POST['Oxigenioterapia_LPM']) . "'" : 'NULL';
+    $selectedPoliciaValue = isset($_POST['Policia_Value']) ? $conn->real_escape_string($_POST['Policia_Value']) : null;
+    $selectedPoliciaValue = !empty($selectedPoliciaValue) ? "'" . $selectedPoliciaValue . "'" : 'NULL';
+    $selectedSamuValue = isset($_POST['Samu_Value']) ? $conn->real_escape_string($_POST['Samu_Value']) : null;
+    $selectedSamuValue = !empty($selectedSamuValue) ? "'" . $selectedSamuValue . "'" : 'NULL';
+    $procedimentos_efetuados['OutrosMeios'] = isset($_POST['OutrosMeios']) ? "'" . $conn->real_escape_string($_POST['OutrosMeios']) . "'" : 'NULL';
+
+    $procedimentos_efetuados['Policia_Value'] = $selectedPoliciaValue;
+    $procedimentos_efetuados['Samu_Value'] = $selectedSamuValue;
+
+    // Prepara os valores para a string SQL
+    $columns = implode(", ", array_map(function ($column) {
+        return "`$column`";
+    }, array_keys($procedimentos_efetuados)));
+
+    $values = implode(", ", array_map(function ($value) use ($conn) {
+        return is_null($value) ? "NULL" : $value;
+    }, $procedimentos_efetuados));
+
+    // Insere os dados no banco de dados
+    $sql_procedimentos = "INSERT INTO ficha_procedimentos_efetuados ($columns) VALUES ($values)";
+
+    if ($conn->query($sql_procedimentos) === TRUE) {
+    } else {
+        echo "Erro ao inserir dados: " . $conn->error;
+    }
+
+    // Fecha a conexão com o banco de dados
+    $conn->close();
 } else {
     // Se o formulário não foi enviado redireciona para a página inicial
     header("Location: index.php");
     exit();
 }
-
-// Dados a serem inseridos no banco de dados
-$oQueAconteceu = $_POST['oqueAconteceu'];
-$aconteceuOutrasVezes = isset($_POST['aconteceuOutrasVezes']) ? $_POST['aconteceuOutrasVezes'] : "";
-$quandoAconteceu = $_POST['quandoAconteceu'];
-
-
-// Montar a consulta SQL
-$sql_anamnese = "INSERT INTO anamnese (oque_aconteceu, quando_aconteceu, quais_problemas) VALUES ('$oQueAconteceu', '$quandoAconteceu', '$quaisProblemas')";
-
-// Executar a consulta SQL
-if ($conn->query($sql_anamnese) === TRUE) {
-    echo "Registro inserido com sucesso!";
-} else {
-    echo "Erro ao inserir registro: " . $conn->error;
-}
-
-// Fechar a conexão com o banco de dados
-$conn->close();
-
 ?>

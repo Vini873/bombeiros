@@ -1,4 +1,5 @@
 <?php
+include("admin/redirectadm.php");
 ?>
 
 <!DOCTYPE html>
@@ -636,7 +637,7 @@
                 </div>
             </div>
             <!--                         -->
-            <!--  Problemas Encontrados -->
+            <!-- ✓ Problemas Encontrados -->
             <!--                         -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingFive">
@@ -660,24 +661,23 @@
                         </div>
                         <div class="row"
                             style="height: 150px; font-size: 12px; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.3);">
-                            <div class="col-4" style="position:relative;"><input class=" form-check-input"
-                                    type="checkbox" name="Obstérico" id="Obstérico">
-                                <label class="form-check-label" for="Obstérico" style="position: absolute; top: 0;">
-                                    Obstérico
+                            <div class="col-4" style="position:relative;">
+                                <label class="form-check-label" for="Obstetrico" style="position: absolute; top: 0;">
+                                    Obstétrico
                                 </label>
                             </div>
-                            <div class="col-8" style="position:relative;"><input class="form-check-input"
-                                    type="checkbox" name="PartoEmergencial" id="PartoEmergencial"
+                            <div class="col-8" style="position:relative;"><input class="form-check-input" value="Parto Emergencial"
+                                    type="radio" name="Obstetrico" id="PartoEmergencial"
                                     style="display: block;">
                                 <label class="form-check-label" for="PartoEmergencial"
                                     style="position: absolute; top: 0; left: 30px;width: 200px">
                                     Parto Emergencial
-                                </label><input class="form-check-input" type="checkbox" name="Gestante" id="Gestante"
+                                </label><input class="form-check-input" type="radio" name="Obstetrico" id="Gestante" value="Gestante"
                                     style="display: block;">
                                 <label class="form-check-label" for="Gestante"
                                     style="position: absolute; top: 20px; left: 30px;width: 200px">
                                     Gestante
-                                </label><input class=" form-check-input" type="checkbox" name="Hemor" id="Hemor"
+                                </label><input class=" form-check-input" type="radio" name="Obstetrico" id="Hemor" value="Hemor. excessiva"
                                     style="display: block;">
                                 <label class="form-check-label" for="Hemor"
                                     style="position: absolute; top: 40px;  left: 30px;width: 200px">
@@ -687,18 +687,17 @@
                         </div>
                         <div class="row"
                             style="height: 125px; font-size: 12px; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.3);">
-                            <div class="col-6" style="position:relative;"><input class=" form-check-input"
-                                    type="checkbox" name="Respiratório" id="Respiratório">
-                                <label class="form-check-label" for="Respiratório" style="position: absolute; top: 0;">
+                            <div class="col-6" style="position:relative;">
+                                <label class="form-check-label" for="Respiratorio" style="position: absolute; top: 0;">
                                     Respiratório
                                 </label>
                             </div>
-                            <div class="col-6" style="position:relative;"><input class=" form-check-input"
-                                    type="checkbox" name="DPOC" id="DPOC" style="display: block;">
+                            <div class="col-6" style="position:relative;"><input class=" form-check-input" value="DPOC"
+                                    type="radio" name="Respiratorio" id="DPOC" style="display: block;">
                                 <label class="form-check-label" for="DPOC"
                                     style="position: absolute; top: 0; left: 30px;width: 200px">
                                     DPOC
-                                </label><input class="form-check-input" type="checkbox" name="Inalação" id="Inalação"
+                                </label><input class="form-check-input" type="radio" name="Respiratorio" id="Inalação" value="Inalação fumaça"
                                     style="display: block;">
                                 <label class="form-check-label" for="Inalação"
                                     style="position: absolute; top: 20px; left: 30px;width: 200px">
@@ -708,18 +707,17 @@
                         </div>
                         <div class="row"
                             style="height: 125px; font-size: 12px; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.3);">
-                            <div class="col-6" style="position:relative;"><input class="form-check-input"
-                                    type="checkbox" name="Diabetes" id="Diabetes">
+                            <div class="col-6" style="position:relative;">
                                 <label class="form-check-label" for="Diabetes" style="position: absolute; top: 0;">
                                     Diabetes
                                 </label>
                             </div>
-                            <div class="col-6" style="position:relative;"><input class="form-check-input"
-                                    type="checkbox" name="Hiperglicemia" id="Hiperglicemia" style="display: block;">
+                            <div class="col-6" style="position:relative;"><input class="form-check-input" value="Hiperglicemia"
+                                    type="radio" name="Diabetes" id="Hiperglicemia" style="display: block;">
                                 <label class="form-check-label" for="Hiperglicemia"
                                     style="position: absolute; top: 0; left: 30px;width: 200px">
                                     Hiperglicemia
-                                </label><input class="form-check-input" type="checkbox" name="Hipoglicemia"
+                                </label><input class="form-check-input" type="radio" name="Diabetes" value="Hipoglicemia"
                                     id="Hipoglicemia" style="display: block;">
                                 <label class="form-check-label" for="Hipoglicemia"
                                     style="position: absolute; top: 20px; left: 30px;width: 200px">
@@ -729,58 +727,49 @@
                         </div>
                         <div class="row"
                             style="height: 225px; font-size: 12px; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.3);" ">
-                        <div class=" col-4"><input class="form-check-input" type="checkbox" name="Transporte"
-                                id="Transporte">
+                        <div class=" col-4">
                             <label class="form-check-label" for="Transporte">
                                 Transporte
                             </label>
                         </div>
-                        <div class="col-8" style="position: relative;"><input class="form-check-input" type="checkbox"
+                        <div class="col-8" style="position: relative;"><input class="form-check-input" type="radio" value="Aéreo"
                                 name="Aereo" id="Aereo" style="display: block;">
                             <label class="form-check-label" for="Aereo" style="position: absolute; top: 0;left: 32px;">
                                 Aéreo
-                            </label><input class="form-check-input" type="checkbox" name="Clinico" id="Clinico"
+                            </label><input class="form-check-input" type="radio" name="Transporte" id="Clinico" value="Clínico"
                                 style="display: block;">
                             <label class="form-check-label" for="Clinico"
                                 style="position: absolute; top: 20px;left: 32px;">
                                 Clínico
-                            </label><input class="form-check-input" type="checkbox" name="Emergencial" id="Emergencial"
+                            </label><input class="form-check-input" type="radio" name="Transporte" id="Emergencial" value="Emergencial"
                                 style="display: block;">
                             <label class="form-check-label" for="Emergencial"
                                 style="position: absolute; top: 40px;left: 32px;">
                                 Emergencial
-                            </label><input class="form-check-input" type="checkbox" name="potrauma" id="potrauma"
+                            </label><input class="form-check-input" type="radio" name="Transporte" id="potrauma" value="Pós-trauma"
                                 style="display: block;">
                             <label class="form-check-label" for="potrauma"
                                 style="position: absolute; top: 60px;left: 32px;">
                                 Pós-trauma
-                            </label><input class="form-check-input" type="checkbox" name="Samu" id="Samu"
+                            </label><input class="form-check-input" type="radio" name="Transporte" id="Samu" value="Samu"
                                 style="display: block;">
                             <label class="form-check-label" for="Samu"
                                 style="position: absolute; top: 80px;left: 32px;">
                                 Samu
-                            </label><input class="form-check-input" type="checkbox" name="Outros" id="Outros"
-                                style="display: block;">
-                            <label class="form-check-label" for="Outros"
-                                style="position: absolute; top: 100px;left: 32px;">
-                                Outros
-                            </label><input type="text" class="form-control">
-                            <input class="form-check-input" type="checkbox" name="noRemocao" id="noRemocao"
+                            </label><input class="form-check-input" type="radio" name="Transporte" id="noRemocao" value="Sem remoção"
                                 style="display: block;">
                             <label class="form-check-label" for="noRemocao"
-                                style="position: absolute; top: 158px;left: 32px;">
+                                style="position: absolute; top: 100px;left: 32px;">
                                 Sem remoção
                             </label>
                         </div>
                     </div>
                     <div class="row"
                         style="height: 150px; font-size: 12px; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.3);">
-                        <div class="col" style="position:relative;"><input class="form-check-input" type="checkbox"
-                                name="Outros" id="Outros" style="display: block;">
+                        <div class="col" style="position:relative;">
                             <label class="form-check-label" for="Outros2"
                                 style="position: absolute; top: 0;left: 32px;">
-                                Outros
-                            </label><input type="text" class="form-control">
+                            </label><input type="text" class="form-control" name="Outros" id="Outros" placeholder="Outros">
                         </div>
                     </div>
                 </div>
@@ -804,374 +793,171 @@
                     <div class="d-flex justify-content-center ">
                         <img src="../images/corpohumano.png" class="mt-3 rounded col-xs-6 col-md-3">
                     </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault167"
-                            name="fraturas">
-                        <label class="form-check-label" for="flexCheckDefault167"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Fraturas / Luxações / Entorses
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault168"
-                            name="ferimentos_diversos">
-                        <label class="form-check-label" for="flexCheckDefault168"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Ferimentos Diversos
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault169"
-                            name="hemorragias">
-                        <label class="form-check-label" for="flexCheckDefault169"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Hemorragias
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault170"
-                            name="esviceração">
-                        <label class="form-check-label" for="flexCheckDefault170"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Esviceração
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault171"
-                            name="fab_faf">
-                        <label class="form-check-label" for="flexCheckDefault171"
-                            style="position: absolute; top: 0;left: 32px;">
-                            F.A.B. / F.A.F.
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault172"
-                            name="amputacao">
-                        <label class="form-check-label" for="flexCheckDefault172"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Amputação
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault173"
-                            name="queimadura1">
-                        <label class="form-check-label" for="flexCheckDefault173"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Queimadura 1° Grau
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault174"
-                            name="queimadura2">
-                        <label class="form-check-label" for="flexCheckDefault174"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Queimadura 2° Grau
-                        </label>
-                    </div>
-                    <div class="row" style="position: relative;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault175"
-                            name="queimadura3">
-                        <label class="form-check-label" for="flexCheckDefault175"
-                            style="position: absolute; top: 0;left: 32px;">
-                            Queimadura 3° Grau
-                        </label>
-                    </div>
-                    <br>
-                    <p>Ferimentos/Fraturas/Entorses/Luxação/Contusão</p>
                     <div class="container">
                         <div class="row">
-                            <div class="col">Local</div>
+                            <div class="col">1</div>
                             <div class="accordion-body">
-                                <input type="text" name="local" class="form-control">
+                                <input type="text" name="1local" id="1local" class="form-control" placeholder="Local">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="local2" class="form-control">
+                                <input type="text" name="1lado" id="1lado" class="form-control" placeholder="Lado">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="local3" class="form-control">
+                                <input type="text" name="1face" id="1face" class="form-control" placeholder="Face">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="local4" class="form-control">
+                                <input type="text" name="1tipo" id="1tipo" class="form-control" placeholder="Tipo (Ferimentos/Fraturas/Entorses/Luxação/Contusão)">
+                            </div>
+                            <div class="col">2</div>
+                            <div class="accordion-body">
+                                <input type="text" name="2local" id="2local" class="form-control" placeholder="Local">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="local5" class="form-control">
-                            </div>
-                            <div class="col">Lado</div>
-                            <div class="accordion-body">
-                                <input type="text" name="lado" class="form-control">
+                                <input type="text" name="2lado" id="2lado" class="form-control" placeholder="Lado">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="lado2" class="form-control">
+                                <input type="text" name="2face" id="2face" class="form-control" placeholder="Face">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="lado3" class="form-control">
+                                <input type="text" name="2tipo" id="2tipo" class="form-control" placeholder="Tipo (Ferimentos/Fraturas/Entorses/Luxação/Contusão)">
+                            </div>
+                            <div class="col">3</div>
+                            <div class="accordion-body">
+                                <input type="text" name="3local" id="3local" class="form-control" placeholder="Local">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="lado4" class="form-control">
+                                <input type="text" name="3lado" id="3lado" class="form-control" placeholder="Lado">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="lado5" class="form-control">
-                            </div>
-                            <div class="col">Tipo</div>
-                            <div class="accordion-body">
-                                <input type="text" name="tipo" class="form-control">
+                                <input type="text" name="3face" id="3face" class="form-control" placeholder="Face">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="tipo2" class="form-control">
+                                <input type="text" name="3tipo" id="3tipo" class="form-control" placeholder="Tipo (Ferimentos/Fraturas/Entorses/Luxação/Contusão)">
+                            </div>
+                            <div class="col">4</div>
+                            <div class="accordion-body">
+                                <input type="text" name="4local" id="4local" class="form-control" placeholder="Local">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="tipo3" class="form-control">
+                                <input type="text" name="4lado" id="4lado" class="form-control" placeholder="Lado">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="tipo4" class="form-control">
+                                <input type="text" name="4face" id="4face" class="form-control" placeholder="Face">
                             </div>
                             <div class="accordion-body">
-                                <input type="text" name="tipo5" class="form-control">
-                            </div>
-                            <div class="col">Face</div>
-                            <div class="accordion-body">
-                                <input type="text" name="face" class="form-control">
-                            </div>
-                            <div class="accordion-body">
-                                <input type="text" name="face2" class="form-control">
-                            </div>
-                            <div class="accordion-body">
-                                <input type="text" name="face3" class="form-control">
-                            </div>
-                            <div class="accordion-body">
-                                <input type="text" name="face4" class="form-control">
-                            </div>
-                            <div class="accordion-body">
-                                <input type="text" name="face5" class="form-control">
+                                <input type="text" name="4tipo" id="4tipo" class="form-control" placeholder="Tipo (Ferimentos/Fraturas/Entorses/Luxação/Contusão)">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">Queimadura 1° Grau
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault176"
-                                    name="cabeca">
-                                <label class="form-check-label" for="flexCheckDefault176"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Cabeça
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault177"
-                                    name="pescoco">
-                                <label class="form-check-label" for="flexCheckDefault177"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Pescoço
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault178"
-                                    name="ant">
-                                <label class="form-check-label" for="flexCheckDefault178"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. ANT.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault179"
-                                    name="pos">
-                                <label class="form-check-label" for="flexCheckDefault179"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. POS.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault180"
-                                    name="genit">
-                                <label class="form-check-label" for="flexCheckDefault180"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    GENIT.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault181"
-                                    name="mid">
-                                <label class="form-check-label" for="flexCheckDefault181"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.D.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault182"
-                                    name="mie">
-                                <label class="form-check-label" for="flexCheckDefault182"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.E.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault183"
-                                    name="msd">
-                                <label class="form-check-label" for="flexCheckDefault183"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.D.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault184"
-                                    name="mse">
-                                <label class="form-check-label" for="flexCheckDefault184"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.E.
+                        <div class="row" style="position: relative;">
+                            <label for="Cabeca" style="margin-right: 5px;">Cabeça:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="Cabeca_Value" id="Cabeca_Value">
+                                    <option value=""></option>
+                                    <option value="Cabeca1grau">Queimadura 1° Grau</option>
+                                    <option value="Cabeca2grau">Queimadura 2° Grau</option>
+                                    <option value="Cabeca3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">Queimadura 2° Grau
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault185"
-                                    name="cabeca2">
-                                <label class="form-check-label" for="flexCheckDefault185"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Cabeça
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault186"
-                                    name="pescoco2">
-                                <label class="form-check-label" for="flexCheckDefault186"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Pescoço
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault187"
-                                    name="ant2">
-                                <label class="form-check-label" for="flexCheckDefault187"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. ANT.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault188"
-                                    name="pos2">
-                                <label class="form-check-label" for="flexCheckDefault188"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. POS.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault189"
-                                    name="genit2">
-                                <label class="form-check-label" for="flexCheckDefault189"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    GENIT.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault190"
-                                    name="mid2">
-                                <label class="form-check-label" for="flexCheckDefault190"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.D.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault191"
-                                    name="mie2">
-                                <label class="form-check-label" for="flexCheckDefault191"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.E.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault192"
-                                    name="msd2">
-                                <label class="form-check-label" for="flexCheckDefault192"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.D.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault193"
-                                    name="mse2">
-                                <label class="form-check-label" for="flexCheckDefault193"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.E.
+                        <div class="row" style="position: relative;">
+                            <label for="Pescoco" style="margin-right: 5px;">Pescoço:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="Pescoco_Value" id="Pescoco_Value">
+                                    <option value=""></option>
+                                    <option value="Pescoco1grau">Queimadura 1° Grau</option>
+                                    <option value="Pescoco2grau">Queimadura 2° Grau</option>
+                                    <option value="Pescoco3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">Queimadura 3° Grau
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault194"
-                                    name="cabeca3">
-                                <label class="form-check-label" for="flexCheckDefault194"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Cabeça
+                        <div class="row" style="position: relative;">
+                            <label for="Tant" style="margin-right: 5px;">T. Ant.:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="Tant_Value" id="Tant_Value">
+                                    <option value=""></option>
+                                    <option value="Tant1grau">Queimadura 1° Grau</option>
+                                    <option value="Tant2grau">Queimadura 2° Grau</option>
+                                    <option value="Tant3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault195"
-                                    name="pescoco3">
-                                <label class="form-check-label" for="flexCheckDefault195"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    Pescoço
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="Tpos" style="margin-right: 5px;">T. Pos.:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="Tpos_Value" id="Tpos_Value">
+                                    <option value=""></option>
+                                    <option value="Tpos1grau">Queimadura 1° Grau</option>
+                                    <option value="Tpos2grau">Queimadura 2° Grau</option>
+                                    <option value="Tpos3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault196"
-                                    name="ant3">
-                                <label class="form-check-label" for="flexCheckDefault196"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. ANT.
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="Genit" style="margin-right: 5px;">Genit.:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="Genit_Value" id="Genit_Value">
+                                    <option value=""></option>
+                                    <option value="Genit1grau">Queimadura 1° Grau</option>
+                                    <option value="Genit2grau">Queimadura 2° Grau</option>
+                                    <option value="Genit3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault197"
-                                    name="pos3">
-                                <label class="form-check-label" for="flexCheckDefault197"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    T. POS.
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="MID" style="margin-right: 5px;">M.I.D.:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="MID_Value" id="MID_Value">
+                                    <option value=""></option>
+                                    <option value="MID1grau">Queimadura 1° Grau</option>
+                                    <option value="MID2grau">Queimadura 2° Grau</option>
+                                    <option value="MID3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault198"
-                                    name="genit3">
-                                <label class="form-check-label" for="flexCheckDefault198"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    GENIT.
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="MIE" style="margin-right: 5px;">M.I.E.:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="MIE_Value" id="MIE_Value">
+                                    <option value=""></option>
+                                    <option value="MIE1grau">Queimadura 1° Grau</option>
+                                    <option value="MIE2grau">Queimadura 2° Grau</option>
+                                    <option value="MIE3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault199"
-                                    name="mid3">
-                                <label class="form-check-label" for="flexCheckDefault199"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.D.
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="MSD" style="margin-right: 5px;">M.S.D:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="MSD_Value" id="MSD_Value">
+                                    <option value=""></option>
+                                    <option value="MSD1grau">Queimadura 1° Grau</option>
+                                    <option value="MSD2grau">Queimadura 2° Grau</option>
+                                    <option value="MSD3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault200"
-                                    name="mie3">
-                                <label class="form-check-label" for="flexCheckDefault200"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.I.E.
+                        </div>
+                        <div class="row" style="position: relative;">
+                            <label for="MSE" style="margin-right: 5px;">M.S.E:
+                            <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px; padding-top: 4px; padding-bottom: 4px;">
+                                <select class="btn btn-secondary" name="MSE_Value" id="MSE_Value">
+                                    <option value=""></option>
+                                    <option value="MSE1grau">Queimadura 1° Grau</option>
+                                    <option value="MSE2grau">Queimadura 2° Grau</option>
+                                    <option value="MSE3grau">Queimadura 3° Grau</option>
+                                </select>
                                 </label>
                             </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault201"
-                                    name="msd3">
-                                <label class="form-check-label" for="flexCheckDefault201"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.D.
-                                </label>
-                            </div>
-                            <div class="row" style="position: relative;">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault202"
-                                    name="mse3">
-                                <label class="form-check-label" for="flexCheckDefault202"
-                                    style="position: absolute; top: 0;left: 32px;">
-                                    M.S.E.
-                                </label>
-                            </div>
+                        </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1197,8 +983,8 @@
         </div>
     </div>
     <!--                     -->
-            <!-- ✓ Sinais e Sintomas -->
-            <!--                     -->
+    <!-- ✓ Sinais e Sintomas -->
+    <!--                     -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1838,7 +1624,7 @@
         </div>
     </div>
     <!--                           -->
-    <!-- ✘ Procedimentos Efetuados -->
+    <!-- ✓ Procedimentos Efetuados -->
     <!--                           -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
@@ -1852,248 +1638,248 @@
             aria-labelledby="panelsStayOpen-headingTwelve">
             <div class="accordion-body">
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault108">
-                    <label class="form-check-label" for="flexCheckDefault108"
+                    <input class="form-check-input" type="checkbox" name="Aspiracao" id="Aspiracao">
+                    <label class="form-check-label" for="Aspiracao"
                         style="position: absolute; top: 0;left: 32px;">
                         Aspiração
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault109">
-                    <label class="form-check-label" for="flexCheckDefault109"
+                    <input class="form-check-input" type="checkbox" name="Avalicao_Inicial" id="Avalicao_Inicial">
+                    <label class="form-check-label" for="Avalicao_Inicial"
                         style="position: absolute; top: 0;left: 32px;">
                         Avaliçao inicial
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault110">
-                    <label class="form-check-label" for="flexCheckDefault110"
+                    <input class="form-check-input" type="checkbox" name="Avaliacao_Dirigida" id="Avaliacao_Dirigida">
+                    <label class="form-check-label" for="Avaliacao_Dirigida"
                         style="position: absolute; top: 0;left: 32px;">
                         Avaliação dirigida
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault111">
-                    <label class="form-check-label" for="flexCheckDefault111"
+                    <input class="form-check-input" type="checkbox" name="Avaliacao_Continuada" id="Avaliacao_Continuada">
+                    <label class="form-check-label" for="Avaliacao_Continuada"
                         style="position: absolute; top: 0;left: 32px;">
                         Avaliação continuada
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault112">
-                    <label class="form-check-label" for="flexCheckDefault112"
+                    <input class="form-check-input" type="checkbox" name="Chave_de_Rautek" id="Chave_de_Rautek">
+                    <label class="form-check-label" for="Chave_de_Rautek"
                         style="position: absolute; top: 0;left: 32px;">
                         Chave de Rautek
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault113">
-                    <label class="form-check-label" for="flexCheckDefault113"
+                    <input class="form-check-input" type="checkbox" name="Canula_de_Guedel" id="Canula_de_Guedel">
+                    <label class="form-check-label" for="Canula_de_Guedel"
                         style="position: absolute; top: 0;left: 32px;">
                         Cânula de Guedel
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault114">
-                    <label class="form-check-label" for="flexCheckDefault114"
+                    <input class="form-check-input" type="checkbox" name="Desobstrucao_de_VA" id="Desobstrucao_de_VA">
+                    <label class="form-check-label" for="Desobstrucao_de_VA"
                         style="position: absolute; top: 0;left: 32px;">
                         Desobstrução de V.A.
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault115">
-                    <label class="form-check-label" for="flexCheckDefault115"
+                    <input class="form-check-input" type="checkbox" name="Emprego_do_DEA" id="Emprego_do_DEA">
+                    <label class="form-check-label" for="Emprego_do_DEA"
                         style="position: absolute; top: 0;left: 32px;">
                         Emprego do D.E.A.
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault116">
-                    <label class="form-check-label" for="flexCheckDefault116"
+                    <input class="form-check-input" type="checkbox" name="Gerenciamento_de_Riscos" id="Gerenciamento_de_Riscos">
+                    <label class="form-check-label" for="Gerenciamento_de_Riscos"
                         style="position: absolute; top: 0;left: 32px;">
                         Gerenciamento de riscos
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault117">
-                    <label class="form-check-label" for="flexCheckDefault117"
+                    <input class="form-check-input" type="checkbox" name="Limpeza_de_Ferimentos" id="Limpeza_de_Ferimentos">
+                    <label class="form-check-label" for="Limpeza_de_Ferimentos"
                         style="position: absolute; top: 0;left: 32px;">
                         Limpeza de ferimentos
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault118">
-                    <label class="form-check-label" for="flexCheckDefault118"
+                    <input class="form-check-input" type="checkbox" name="Curativos" id="Curativos">
+                    <label class="form-check-label" for="Curativos"
                         style="position: absolute; top: 0;left: 32px;">
                         Curativos
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault119">
-                    <label class="form-check-label" for="flexCheckDefault119"
+                    <input class="form-check-input" type="checkbox" name="Compressivo" id="Compressivo">
+                    <label class="form-check-label" for="Compressivo"
                         style="position: absolute; top: 0;left: 32px;">
                         Compressivo
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault120">
-                    <label class="form-check-label" for="flexCheckDefault120"
+                    <input class="form-check-input" type="checkbox" name="Encravamento" id="Encravamento">
+                    <label class="form-check-label" for="Encravamento"
                         style="position: absolute; top: 0;left: 32px;">
                         Encravamento
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault121">
-                    <label class="form-check-label" for="flexCheckDefault121"
+                    <input class="form-check-input" type="checkbox" name="Ocular" id="Ocular">
+                    <label class="form-check-label" for="Ocular"
                         style="position: absolute; top: 0;left: 32px;">
                         Ocular
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault122">
-                    <label class="form-check-label" for="flexCheckDefault122"
+                    <input class="form-check-input" type="checkbox" name="Queimadura" id="Queimadura">
+                    <label class="form-check-label" for="Queimadura"
                         style="position: absolute; top: 0;left: 32px;">
                         Queimadura
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault123">
-                    <label class="form-check-label" for="flexCheckDefault123"
+                    <input class="form-check-input" type="checkbox" name="Simples" id="Simples">
+                    <label class="form-check-label" for="Simples"
                         style="position: absolute; top: 0;left: 32px;">
                         Simples
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault124">
-                    <label class="form-check-label" for="flexCheckDefault124"
+                    <input class="form-check-input" type="checkbox" name="3_Pontas" id="3_Pontas">
+                    <label class="form-check-label" for="3_Pontas"
                         style="position: absolute; top: 0;left: 32px;">
                         3 pontas
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault125">
-                    <label class="form-check-label" for="flexCheckDefault125"
+                    <input class="form-check-input" type="checkbox" name="Imobilacoes" id="Imobilacoes">
+                    <label class="form-check-label" for="Imobilacoes"
                         style="position: absolute; top: 0;left: 32px;">
                         Imobilações
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault126">
-                    <label class="form-check-label" for="flexCheckDefault126"
+                    <input class="form-check-input" type="checkbox" name="Membro_INF_dir" id="Membro_INF_dir">
+                    <label class="form-check-label" for="Membro_INF_dir"
                         style="position: absolute; top: 0;left: 32px;">
                         Membro INF. dir
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault127">
-                    <label class="form-check-label" for="flexCheckDefault127"
+                    <input class="form-check-input" type="checkbox" name="Membro_INF_esq" id="Membro_INF_esq">
+                    <label class="form-check-label" for="Membro_INF_esq"
                         style="position: absolute; top: 0;left: 32px;">
                         Membro INF. esq
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault128">
-                    <label class="form-check-label" for="flexCheckDefault128"
+                    <input class="form-check-input" type="checkbox" name="Membro_SUP_dir" id="Membro_SUP_dir">
+                    <label class="form-check-label" for="Membro_SUP_dir"
                         style="position: absolute; top: 0;left: 32px;">
                         Membro SUP. dir
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault129">
-                    <label class="form-check-label" for="flexCheckDefault129"
+                    <input class="form-check-input" type="checkbox" name="Membro_SUP_esq" id="Membro_SUP_esq">
+                    <label class="form-check-label" for="Membro_SUP_esq"
                         style="position: absolute; top: 0;left: 32px;">
                         Membro SUP. esq
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault130">
-                    <label class="form-check-label" for="flexCheckDefault130"
+                    <input class="form-check-input" type="checkbox" name="Quadril" id="Quadril">
+                    <label class="form-check-label" for="Quadril"
                         style="position: absolute; top: 0;left: 32px;">
                         Quadril
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault131">
-                    <label class="form-check-label" for="flexCheckDefault131"
+                    <input class="form-check-input" type="checkbox" name="Cervical" id="Cervical">
+                    <label class="form-check-label" for="Cervical"
                         style="position: absolute; top: 0;left: 32px;">
                         Cervical
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault132">
-                    <label class="form-check-label" for="flexCheckDefault132"
+                    <input class="form-check-input" type="checkbox" name="Maca_Sobre_Rodas" id="Maca_Sobre_Rodas">
+                    <label class="form-check-label" for="Maca_Sobre_Rodas"
                         style="position: absolute; top: 0;left: 32px;">
                         Maca sobre rodas
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault133">
-                    <label class="form-check-label" for="flexCheckDefault133"
+                    <input class="form-check-input" type="checkbox" name="Maca_Rigida" id="Maca_Rigida">
+                    <label class="form-check-label" for="Maca_Rigida"
                         style="position: absolute; top: 0;left: 32px;">
                         Maca rígida
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault134">
-                    <label class="form-check-label" for="flexCheckDefault134"
+                    <input class="form-check-input" type="checkbox" name="Ponte" id="Ponte">
+                    <label class="form-check-label" for="Ponte"
                         style="position: absolute; top: 0;left: 32px;">
                         Ponte
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault135">
-                    <label class="form-check-label" for="flexCheckDefault135"
+                    <input class="form-check-input" type="checkbox" name="Retirado_Capacete" id="Retirado_Capacete">
+                    <label class="form-check-label" for="Retirado_Capacete"
                         style="position: absolute; top: 0;left: 32px;">
                         Retirado capacete
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault136">
-                    <label class="form-check-label" for="flexCheckDefault136"
+                    <input class="form-check-input" type="checkbox" name="RCP" id="RCP">
+                    <label class="form-check-label" for="RCP"
                         style="position: absolute; top: 0;left: 32px;">
                         R.C.P
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault137">
+                    <input class="form-check-input" type="checkbox" name="Rolamento_90" id="Rolamento_90">
                     <label class="form-check-label" for="flexCheckDefault137"
                         style="position: absolute; top: 0;left: 32px;">
                         Rolamento 90°
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault138">
-                    <label class="form-check-label" for="flexCheckDefault138"
+                    <input class="form-check-input" type="checkbox" name="Rolamento_180" id="Rolamento_180">
+                    <label class="form-check-label" for="Rolamento_180"
                         style="position: absolute; top: 0;left: 32px;">
                         Rolamento 180°
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault139">
-                    <label class="form-check-label" for="flexCheckDefault139"
+                    <input class="form-check-input" type="checkbox" name="Tomada_Decisao" id="Tomada_Decisao">
+                    <label class="form-check-label" for="Tomada_Decisao"
                         style="position: absolute; top: 0;left: 32px;">
                         Tomada decisão
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault140">
-                    <label class="form-check-label" for="flexCheckDefault140"
+                    <input class="form-check-input" type="checkbox" name="Tratado_Choque" id="Tratado_Choque">
+                    <label class="form-check-label" for="Tratado_Choque"
                         style="position: absolute; top: 0;left: 32px;">
                         Tratado choque
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault141">
-                    <label class="form-check-label" for="flexCheckDefault141"
+                    <input class="form-check-input" type="checkbox" name="Uso_de_Canula" id="Uso_de_Canula">
+                    <label class="form-check-label" for="Uso_de_Canula"
                         style="position: absolute; top: 0;left: 32px;">
                         Uso de cânula
                     </label>
                 </div>
                 <div class="row" style="position: relative; height: 30px;display: flex;align-items: center;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault142">
-                    <label class="form-check-label" for="flexCheckDefault142"
+                    <input class="form-check-input" type="checkbox" name="Uso_Colar" id="Uso_Colar">
+                    <label class="form-check-label" for="Uso_Colar"
                         style="position: absolute; top: 0;left: 32px; display: flex;align-items: center;">
-                        Uso colar <input type="text" name="tamColar" id="" placeholder="Tamanho:" style="display: flex;
+                        Uso colar <input type="text" name="tamColar" id="tamColar" placeholder="Tamanho:" style="display: flex;
                 width: 150px;
                 padding: 0.200rem 0.50rem;
                 margin-left: 50px;
@@ -2112,31 +1898,31 @@
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault143">
-                    <label class="form-check-label" for="flexCheckDefault143"
+                    <input class="form-check-input" type="checkbox" name="Uso_KED" id="Uso_KED">
+                    <label class="form-check-label" for="Uso_KED"
                         style="position: absolute; top: 0;left: 32px;">
                         Uso KED
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault144">
-                    <label class="form-check-label" for="flexCheckDefault144"
+                    <input class="form-check-input" type="checkbox" name="Uso_TTF" id="Uso_TTF">
+                    <label class="form-check-label" for="Uso_TTF"
                         style="position: absolute; top: 0;left: 32px;">
                         Uso TTF
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault145">
-                    <label class="form-check-label" for="flexCheckDefault145"
+                    <input class="form-check-input" type="checkbox" name="Ventilacao_Suporte" id="Ventilacao_Suporte">
+                    <label class="form-check-label" for="Ventilacao_Suporte"
                         style="position: absolute; top: 0;left: 32px;">
                         Ventilação suporte
                     </label>
                 </div>
                 <div class="row" style="position: relative; height: 30px;display: flex;align-items: center;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault146">
-                    <label class="form-check-label" for="flexCheckDefault146"
+                    <input class="form-check-input" type="checkbox" name="Oxigenioterapia" id="Oxigenioterapia">
+                    <label class="form-check-label" for="Oxigenioterapia"
                         style="position: absolute; top: 0;left: 32px; display: flex;align-items: center;">
-                        Oxigenioterapia <input type="text" name="tamColar" id="" placeholder="LPM:" style="display: flex;
+                        Oxigenioterapia <input type="text" name="Oxigenioterapia_LPM" id="Oxigenioterapia_LPM" placeholder="LPM:" style="display: flex;
                 width: 150px;
                 padding: 0.200rem 0.50rem;
                 margin-left: 50px;
@@ -2155,10 +1941,10 @@
                     </label>
                 </div>
                 <div class="row" style="position: relative; height: 30px;display: flex;align-items: center;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault147">
-                    <label class="form-check-label" for="flexCheckDefault147"
+                    <input class="form-check-input" type="checkbox" name="Reanimador" id="Reanimador">
+                    <label class="form-check-label" for="Reanimador"
                         style="position: absolute; top: 0;left: 32px; display: flex;align-items: center;">
-                        Reanimador <input type="text" name="tamColar" id="" placeholder="LPM:" style="display: flex;
+                        Reanimador <input type="text" name="Reanimador_LPM" id="Reanimador_LPM" placeholder="LPM:" style="display: flex;
                 width: 150px;
                 padding: 0.200rem 0.50rem;
                 margin-left: 50px;
@@ -2178,68 +1964,56 @@
                 </div>
                 <hr>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault148">
-                    <label class="form-check-label" for="flexCheckDefault148"
+                    <input class="form-check-input" type="checkbox" name="Meios_Auxiliares" id="Meios_Auxiliares">
+                    <label class="form-check-label" for="Meios_Auxiliares"
                         style="position: absolute; top: 0;left: 32px;">
                         Meios auxiliares
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault149">
-                    <label class="form-check-label" for="flexCheckDefault149"
+                    <input class="form-check-input" type="checkbox" name="Celesc" id="Celesc">
+                    <label class="form-check-label" for="Celesc"
                         style="position: absolute; top: 0;left: 32px;">
                         Celesc
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault150">
-                    <label class="form-check-label" for="flexCheckDefault150"
+                    <input class="form-check-input" type="checkbox" name="Def_Civil" id="Def_Civil">
+                    <label class="form-check-label" for="Def_Civil"
                         style="position: absolute; top: 0;left: 32px;">
                         Def. Civil
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault151">
-                    <label class="form-check-label" for="flexCheckDefault151"
+                    <input class="form-check-input" type="checkbox" name="IGP_PC" id="IGP_PC">
+                    <label class="form-check-label" for="IGP_PC"
                         style="position: absolute; top: 0;left: 32px;">
                         IGP / PC
                     </label>
                 </div>
                 <div class="row" style="position: relative; height: 46px;display: flex; align-items: center;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault152">
-                    <label class="form-check-label" for="flexCheckDefault152"
-                        style="position: absolute; top: 0;left: 32px;">
-                        <div class="btn-group dropend"
-                            style="display: flex; align-items: center; width: 100px;padding-top: 4px; padding-bottom: 4px">
-                            <button type="button" class="btn btn-secondary dropdown-toggle"
-                                style="display: flex; align-items: center; width: 100px;" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Polícia
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item">Cívil</a></li>
-                                <li><a class="dropdown-item">Militar</a></li>
-                                <li><a class="dropdown-item">Pré</a></li>
-                                <li><a class="dropdown-item">PRF</a></li>
-                            </ul>
+                    <input class="form-check-input" type="checkbox" name="Policia" id="Policia">
+                    <label class="form-check-label" for="Policia" style="position: absolute; top: 0;left: 32px;">
+                        <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px;padding-top: 4px; padding-bottom: 4px">
+                            <select class="btn btn-secondary" name="Policia_Value" id="Policia_Value">
+                                <option value=""></option>
+                                <option value="Civil">Cívil</option>
+                                <option value="Militar">Militar</option>
+                                <option value="PRE">PRE</option>
+                                <option value="PRF">PRF</option>
+                            </select>
                         </div>
                     </label>
                 </div>
                 <div class="row" style="position: relative; height: 46px;display: flex; align-items: center;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault153">
-                    <label class="form-check-label" for="flexCheckDefault153"
-                        style="position: absolute; top: 0;left: 32px;">
-                        <div class="btn-group dropend"
-                            style="display: flex; align-items: center; width: 100px;padding-top: 4px; padding-bottom: 4px">
-                            <button type="button" class="btn btn-secondary dropdown-toggle"
-                                style="display: flex; align-items: center; width: 100px;" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Samu
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item">USA</a></li>
-                                <li><a class="dropdown-item">USB</a></li>
-                            </ul>
+                    <input class="form-check-input" type="checkbox" name="Samu" id="Samu">
+                    <label class="form-check-label" for="Samu" style="position: absolute; top: 0;left: 32px;">
+                        <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px;padding-top: 4px; padding-bottom: 4px">
+                            <select class="btn btn-secondary" name="Samu_Value" id="Samu_Value">
+                                <option value=""></option>
+                                <option value="USA">USA</option>
+                                <option value="USB">USB</option>
+                            </select>
                         </div>
                     </label>
                 </div>
@@ -2256,21 +2030,21 @@
                 </div> 
               -->
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault154">
-                    <label class="form-check-label" for="flexCheckDefault154"
+                    <input class="form-check-input" type="checkbox" name="CIT" id="CIT">
+                    <label class="form-check-label" for="CIT"
                         style="position: absolute; top: 0;left: 32px;">
                         CIT
                     </label>
                 </div>
                 <div class="row" style="position: relative; display: flex; align-items: center;height: 46px;">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault155">
-                    <input type="text" name="outrosMeios" class="form-control" style="width: 200px; margin-left: 25px;">
+                    <input class="form-check-input" type="checkbox" name="outrosMeios" id="outrosMeios">
+                    <input type="text" name="OutrosMeios" class="form-control" style="width: 200px; margin-left: 25px;">
                 </div>
             </div>
         </div>
     </div>
     <!--                              -->
-    <!-- ✘ Materiais Utilizados Desc. -->
+    <!-- ✓ Materiais Utilizados Desc. -->
     <!--                              -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingThirteen">
@@ -2300,7 +2074,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant15" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantAtaduras" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault157"
@@ -2312,7 +2086,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant16" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantManta" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2326,7 +2100,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant17" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantCateter" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault159"
@@ -2338,7 +2112,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant18" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantPas" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2352,7 +2126,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant19" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantCompressa" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault161"
@@ -2364,7 +2138,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant20" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantSonda" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2378,7 +2152,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant21" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantKits" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault163"
@@ -2390,7 +2164,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant22" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantSoro" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2404,7 +2178,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant23" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantLuvas" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault165"
@@ -2416,7 +2190,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant24" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantTalas" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2430,26 +2204,26 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant25" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantMascara" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault167"
                             style="display: block; ">
                         <label class="form-check-label" for="flexCheckDefault167"
                             style="position: absolute; top: -8px;left: 32px;">
-                            <input type="text" class="form-control" name="othersLeave1" id="">
+                            <input type="text" class="form-control" name="Outro_Mat" id="">
                         </label>
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant26" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantOutro" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--                                 -->
-    <!-- ✘ Materiais Utilizados N. Desc. -->
+    <!-- ✓ Materiais Utilizados N. Desc. -->
     <!--                                 -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingFourteen">
@@ -2479,7 +2253,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantBase" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
@@ -2491,7 +2265,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantTTF" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2505,7 +2279,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="QuantColar1" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
@@ -2517,7 +2291,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantTiranteA" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2531,7 +2305,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantColar2" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
@@ -2543,7 +2317,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantTiranteC" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2557,7 +2331,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantCoxins" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
@@ -2569,7 +2343,7 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantCanula" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2583,19 +2357,19 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantKED" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
                             style="display: block; ">
                         <label class="form-check-label" for="flexCheckDefault89"
                             style="position: absolute; top: -8px;left: 32px;">
-                            <input type="text" class="form-control" name="othersLeave0" id="">
+                            <input type="text" class="form-control" name="Outro_Mat1" id="Outro_Mat1">
                         </label>
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantOutro1" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 4px; padding-bottom: 4px; display: flex; align-items: center;">
@@ -2609,26 +2383,26 @@
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant13" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantMaca" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                     <div class="col-4" style="position: relative;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault89"
                             style="display: block; ">
                         <label class="form-check-label" for="flexCheckDefault89"
                             style="position: absolute; top: -8px;left: 32px;">
-                            <input type="text" class="form-control" name="othersLeave1" id="">
+                            <input type="text" class="form-control" name="Outro_Mat2" id="Outro_Mat2">
                         </label>
                     </div>
                     <div class="col-2"
                         style="border-left: 1px solid black; border-right:1px solid black; padding: 0;display: flex;flex-direction: column;align-items: center;">
-                        <input type="text" name="Quant14" class="form-control" style="width: 80%;padding: 5px;">
+                        <input type="text" name="quantOutro2" class="form-control" style="width: 80%;padding: 5px;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--                   -->
-    <!-- ✓ Termo de recusa -->
+    <!-- ✘ Termo de recusa -->
     <!--                   -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingFifteen">
@@ -2641,8 +2415,36 @@
         <div id="panelsStayOpen-collapseFifteen" class="accordion-collapse collapse"
             aria-labelledby="panelsStayOpen-headingFifteen">
             <div class="accordion-body">
-            <label for="imagem">Escolha uma imagem:</label>
-    <input type="file" name="imagem" id="imagem" accept="image/*">
+                <div class="row" style="position: relative;height: 40px">Eu: <input type="text" name=""
+                        class="form-control" id="" style="width: 250px; position: absolute; right: 5px;">
+                </div>
+                <div class="row" style="position: relative;height: 40px">Portador da carteira de identidade
+                    RG Nº <input type="text" name="" class="form-control" id=""
+                        style="width: 80px; position: absolute; right: 5px;">
+                </div>
+                <div class="row" style="position: relative;height: 40px">Incrito no CPF sob nº <input type="text"
+                        name="" class="form-control" style="width: 100px; position: absolute; right: 5px;" id=""></div>
+                <div class="row" style="height:260px;">Na qualidade de vítima/Paciente, Usando dos direitos
+                    que a lei me
+                    garante, me recuso neste ato o atendimento e/ou transporte oferecido pelos bombeiros
+                    voluntários de
+                    Guaramirim/SC, e assumo, individualmente a responsibilidade pelas consequências que
+                    possam ocorrer por
+                    razão da minha recusa. Declaro que fui devidamente informado sobre o procedimento pelo
+                    qual eu deveria
+                    me submeter e alertado sobre os riscos à saúde da sua não realização.</div>
+                <div class="row" style="position: relative; height: 40px;">Ass: </div>
+                <div class="row" style="position: relative;height: 40px">Testemunha: <input type="text" name=""
+                        class="form-control" style="width: 125px; position: absolute; right: 5px;" id=""></div>
+                <div class="row" style="position: relative;height: 40px">Doc: <input type="text" name=""
+                        class="form-control" style="width: 125px; position: absolute; right: 5px;" id="">
+                </div>
+                <div class="row" style="position: relative;height: 40px">Testemunha: <input type="text" name=""
+                        class="form-control" style="width: 125px; position: absolute; right: 5px;" id=""></div>
+                <div class="row" style="position: relative;height: 40px">Doc: <input type="text" name=""
+                        class="form-control" style="width: 125px; position: absolute; right: 5px;" id="">
+                </div>
+
             </div>
         </div>
     </div>
@@ -2664,9 +2466,8 @@
             </div>
         </div>
     </div>
-   
     <!--                              -->
-    <!--  Anamnese Emergência Médica -->
+    <!-- ✓ Anamnese Emergência Médica -->
     <!--                              -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSeventeen">
@@ -2682,15 +2483,15 @@
                 <div class="row">
                     <p class="text-center">O que aconteceu (Sinais e Sintomas)</p>
                 </div>
-                <div class="row"><input type="text" name="oqueAconteceu" class="form-control"></div>
+                <div class="row"><input type="text" name="OqueAconteceu" class="form-control"></div>
                 <div class="row" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="col-6">Aconteceu Outras vezes?</div>
                     <div class="col-auto">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefaultSim0">
+                        <input class="form-check-input" type="radio" name="AconteceuOutrasVezes" id="AconteceuOutrasVezesSim" value="Sim">
                         <label class="form-check-label" for="flexRadioDefaultSim0">
                             Sim
                         </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefaultNao0">
+                        <input class="form-check-input" type="radio" name="AconteceuOutrasVezes" id="AconteceuOutrasVezesNao" value="Não">
                         <label class="form-check-label" for="flexRadioDefaultNao0">
                             Não
                         </label>
@@ -2701,17 +2502,17 @@
                         <p>A quanto tempo isto aconteceu:</p>
                     </div>
                     <div class="col-8">
-                        <input type="text" name="quandoAconteceu" class="form-control">
+                        <input type="text" name="QuandoAconteceu" class="form-control">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="col-6">Tem algum problema de saúde?</div>
                     <div class="col-auto">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefaultSim1">
+                        <input class="form-check-input" type="radio" name="ProblemaSaude" id="ProblemaSaudeSim" value="Sim">
                         <label class="form-check-label" for="flexRadioDefaultSim1">
                             Sim
                         </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefaultNao1">
+                        <input class="form-check-input" type="radio" name="ProblemaSaude" id="ProblemaSaudeNao" value="Não">
                         <label class="form-check-label" for="flexRadioDefaultNao1">
                             Não
                         </label>
@@ -2722,17 +2523,17 @@
                         <p>Quais:</p>
                     </div>
                     <div class="col-8">
-                        <input type="text" name="quaisProblemas" class="form-control">
+                        <input type="text" name="QuaisProblemas" class="form-control">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="col-6">Faz uso de medicação:</div>
                     <div class="col-auto">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefaultSim2">
+                        <input class="form-check-input" type="radio" name="UsoMedicacao" id="UsoMedicacaoSim" value="Sim">
                         <label class="form-check-label" for="flexRadioDefaultSim2">
                             Sim
                         </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefaultNao2">
+                        <input class="form-check-input" type="radio" name="UsoMedicacao" id="UsoMedicacaoNao" value="Não"> 
                         <label class="form-check-label" for="flexRadioDefaultNao2">
                             Não
                         </label>
@@ -2742,24 +2543,24 @@
                     <div class="col-8">
                         <p>Horario da ultima medicação:</p>
                     </div>
-                    <div class="col-4"><input type="text" name="quaisProblemas" class="form-control"></div>
+                    <div class="col-4"><input type="time" name="HorarioMedicacao" class="form-control"></div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <p>Quais:</p>
                     </div>
                     <div class="col-8">
-                        <input type="text" name="quandoAconteceu" class="form-control">
+                        <input type="text" name="MedicacaoQuais" class="form-control">
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px; padding-bottom: 5px;">
                     <div class="col-6">Alérgico a alguma coisa?</div>
                     <div class="col-auto">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefaultSim3">
+                        <input class="form-check-input" type="radio" name="TemAlergia" id="TemAlergiaSim" value="Sim">
                         <label class="form-check-label" for="flexRadioDefaultSim3">
                             Sim
                         </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefaultNao3">
+                        <input class="form-check-input" type="radio" name="TemAlergia" id="TemAlergiaNao" value="Não">
                         <label class="form-check-label" for="flexRadioDefaultNao3">
                             Não
                         </label>
@@ -2770,17 +2571,17 @@
                         <p>Oque:</p>
                     </div>
                     <div class="col-8">
-                        <input type="text" name="quandoAconteceu" class="form-control">
+                        <input type="text" name="TemAlergiaQue" class="form-control">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">Ingeriu alimentos ou liquídos > 6 horas:</div>
                     <div class="col-auto">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefaultSim4">
+                        <input class="form-check-input" type="radio" name="IngeriuAlimento" id="IngeriuAlimentoSim" value="Sim">
                         <label class="form-check-label" for="flexRadioDefaultSim4">
                             Sim
                         </label>
-                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefaultNao4">
+                        <input class="form-check-input" type="radio" name="IngeriuAlimento" id="IngeriuAlimentoNao" value="Não">
                         <label class="form-check-label" for="flexRadioDefaultNao4">
                             Não
                         </label>
@@ -2790,7 +2591,7 @@
                     <div class="col-8">
                         <p>Que horas:</p>
                     </div>
-                    <div class="col-4"><input type="text" name="quaisProblemas" class="form-control"></div>
+                    <div class="col-4"><input type="time" name="IngeriuAlimentoHoras" class="form-control"></div>
                 </div>
             </div>
         </div>
@@ -3197,7 +2998,7 @@
                 </div>
             </div>
         </div>
-        <input class="btn btn-primary" type="submit" value="Enviar" style="width: 100%; color: red">
+        <input class="btn btn-primary" type="submit" value="Enviar" style="width: 100%;">
         </form>
     </div>
     </div>
@@ -3262,7 +3063,6 @@
             maior7.style.display = "none";
         }
     });
-
 
     // var inputIdade = document.getElementById("idadePaciente_DP");
     // var menor5 = document.getElementById("menor5");
