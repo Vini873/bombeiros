@@ -1,7 +1,3 @@
-<?php
-include("admin/redirectadm.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +5,7 @@ include("admin/redirectadm.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="../CSS/style.cssSA.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -34,16 +31,23 @@ include("admin/redirectadm.php");
 </head>
 
 <body>
+<header>
+            <div class="d-lg-none">
+
+                <nav class="navbar navbar-light bg-light p-0">
+                    <div class="container">
+                        <a class="navbar-brand" href="pagina_inicial.php">S.A. Bombeiros</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
     <div class="container-fluid">
         <form action="salvar_ocorrencia.php" method="post">
             <div class="row text">
                 <div class="col-lg">
-                    <a href="ocorrencia.php" class="display-1" style="color: black; text-decoration: none; font-weight: 600;">Ocorrência</a>
+                    <a href="ocorrencia.php" class="display-1" style="color: black; text-decoration: none; font-weight: 600;">Registrar ocorrência</a>
                 </div>
             </div>
-            <!--                     -->
-            <!-- ✓ Detalhes Paciente -->
-            <!--                     -->
             <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -117,9 +121,6 @@ include("admin/redirectadm.php");
                     </div>
                 </div>
             </div>
-            <!--                      -->
-            <!-- ✓ Tipo de Ocorrência -->
-            <!--                      -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -305,9 +306,9 @@ include("admin/redirectadm.php");
                     </div>
                 </div>
             </div>
-            <!--                     -->
-            <!-- ✓ Avaliação GLASGOW -->
-            <!--                     -->
+
+
+
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -562,9 +563,9 @@ include("admin/redirectadm.php");
                     </div3>
                 </div>
             </div>
-            <!--                     -->
-            <!--   ✓ Sinais Vitais   -->
-            <!--                     -->
+
+
+
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -636,9 +637,6 @@ include("admin/redirectadm.php");
                     </div>
                 </div>
             </div>
-            <!--                         -->
-            <!-- ✓ Problemas Encontrados -->
-            <!--                         -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -775,9 +773,6 @@ include("admin/redirectadm.php");
                 </div>
             </div>
     </div>
-    <!--                           -->
-    <!-- ✘ Localização dos Traumas -->
-    <!--                           -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSix">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -964,9 +959,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                      -->
-    <!-- ✓ Objetos Recolhidos -->
-    <!--                      -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -981,10 +973,7 @@ include("admin/redirectadm.php");
                 <input type="text" name="objRec" class="form-control">
             </div>
         </div>
-    </div>
-    <!--                     -->
-    <!-- ✓ Sinais e Sintomas -->
-    <!--                     -->
+    </div
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1406,9 +1395,6 @@ include("admin/redirectadm.php");
                     </div>
                 </div>
             </div>
-    <!--                     -->
-    <!-- ✓ Forma de Condução -->
-    <!--                     -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingNine">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1446,11 +1432,7 @@ include("admin/redirectadm.php");
                 </div>
             </div>
         </div>
-    </div>
-    <!--              -->
-    <!-- ✓ Vítima Era -->
-    <!--              -->
-    <div class="accordion-item">
+    </diviv class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingTen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false"
@@ -1462,7 +1444,7 @@ include("admin/redirectadm.php");
             aria-labelledby="panelsStayOpen-headingTen">
             <div class="accordion-body">
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Ciclista" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Ciclista" name="Vitima_Era"
                         id="flexCheckDefaultCiclista">
                     <label class="form-check-label" for="flexCheckDefaultCiclista"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1470,7 +1452,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Condutor Moto" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Condutor Moto" name="Vitima_Era"
                         id="flexCheckDefaultCondutorMoto">
                     <label class="form-check-label" for="flexCheckDefaultCondutorMoto"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1478,7 +1460,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Gestante" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Gestante" name="Vitima_Era"
                         id="flexCheckDefaultGestante">
                     <label class="form-check-label" for="flexCheckDefaultGestante"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1486,7 +1468,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Pass. Banco da Frente" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Pass. Banco da Frente" name="Vitima_Era"
                         id="flexCheckDefaultPasFrente">
                     <label class="form-check-label" for="flexCheckDefaultPasFrente"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1494,7 +1476,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Pass. Moto" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Pass. Moto" name="Vitima_Era"
                         id="flexCheckDefaultPasMoto">
                     <label class="form-check-label" for="flexCheckDefaultPasMoto"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1502,7 +1484,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Condutor Carro" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Condutor Carro" name="Vitima_Era"
                         id="flexCheckDefaultCondutorcarro">
                     <label class="form-check-label" for="flexCheckDefaultCondutorcarro"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1510,7 +1492,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Clínico" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Clínico" name="Vitima_Era"
                         id="flexCheckDefaultClinico">
                     <label class="form-check-label" for="flexCheckDefaultClinico"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1518,7 +1500,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Trauma" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Trauma" name="Vitima_Era"
                         id="flexCheckDefaultTrauma">
                     <label class="form-check-label" for="flexCheckDefaultTrauma"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1526,7 +1508,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Pass. Banco de Trás" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Pass. Banco de Trás" name="Vitima_Era"
                         id="flexCheckDefaultPassTras">
                     <label class="form-check-label" for="flexCheckDefaultPassTras"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1534,7 +1516,7 @@ include("admin/redirectadm.php");
                     </label>
                 </div>
                 <div class="row" style="position: relative;">
-                    <input class="form-check-input" type="radio" value="Pedestre" name="Vitima_Era"
+                    <input class="form-check-input" type="checkbox" value="Pedestre" name="Vitima_Era"
                         id="flexCheckDefaultPedestre">
                     <label class="form-check-label" for="flexCheckDefaultPedestre"
                         style="position: absolute; top: 0;left: 32px;">
@@ -1544,9 +1526,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                      -->
-    <!-- ✓ Decisão Transporte -->
-    <!--                      -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1623,9 +1602,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                           -->
-    <!-- ✓ Procedimentos Efetuados -->
-    <!--                           -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2017,18 +1993,12 @@ include("admin/redirectadm.php");
                         </div>
                     </label>
                 </div>
-                <!-- CASO NÃO FUNCIONE COM A TAG BUTTON MUDE PARA SELECT(NSEI COMO A TAG BUTTON VAI RESPONDER COM O BANCO), VOU DEIXAR UM CODIGO COMMITADO AQUI EMBAIXO PARA USAR O SELECT AO INVES DO BUTTON -->
-                <!-- CASO NÃO FUNCIONE COM A TAG BUTTON MUDE PARA SELECT(NSEI COMO A TAG BUTTON VAI RESPONDER COM O BANCO), VOU DEIXAR UM CODIGO COMMITADO AQUI EMBAIXO PARA USAR O SELECT AO INVES DO BUTTON -->
-                <!-- CASO NÃO FUNCIONE COM A TAG BUTTON MUDE PARA SELECT(NSEI COMO A TAG BUTTON VAI RESPONDER COM O BANCO), VOU DEIXAR UM CODIGO COMMITADO AQUI EMBAIXO PARA USAR O SELECT AO INVES DO BUTTON -->
-
-                <!-- <div class="btn-group dropend" style="display: flex; align-items: center; width: 100px;padding-top: 4px; padding-bottom: 4px">
                   <select class="btn btn-secondary dropdown-toggle" style="display: flex; align-items: center; width: 100px;" data-bs-toggle="dropdown" aria-expanded="false">
                     Samu
                   <option>USA</a></li>
                   <option>USB</a></li>
                   </select>
                 </div> 
-              -->
                 <div class="row" style="position: relative;">
                     <input class="form-check-input" type="checkbox" name="CIT" id="CIT">
                     <label class="form-check-label" for="CIT"
@@ -2043,9 +2013,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                              -->
-    <!-- ✓ Materiais Utilizados Desc. -->
-    <!--                              -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingThirteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2222,9 +2189,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                                 -->
-    <!-- ✓ Materiais Utilizados N. Desc. -->
-    <!--                                 -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingFourteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2400,11 +2364,7 @@ include("admin/redirectadm.php");
                 </div>
             </div>
         </div>
-    </div>
-    <!--                   -->
-    <!-- ✘ Termo de recusa -->
-    <!--                   -->
-    <div class="accordion-item">
+    </div   <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingFifteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#panelsStayOpen-collapseFifteen" aria-expanded="false"
@@ -2448,9 +2408,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                           -->
-    <!-- ✓ Observações Importantes -->
-    <!--                           -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSixteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2466,9 +2423,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                              -->
-    <!-- ✓ Anamnese Emergência Médica -->
-    <!--                              -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSeventeen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2596,9 +2550,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                        -->
-    <!-- ✓ Anamnese Gestacional -->
-    <!--                        -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingEighteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2789,9 +2740,6 @@ include("admin/redirectadm.php");
             </div>
         </div>
     </div>
-    <!--                           -->
-    <!-- ✓ Avaliação da Cinemática -->
-    <!--                           -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingNineteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2917,11 +2865,7 @@ include("admin/redirectadm.php");
                 </div>
             </div>
         </div>
-    </div>
-    <!--                   -->
-    <!-- ✓ Detalhes Viagem -->
-    <!--                   -->
-    <div class="accordion-item">
+    </div   <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingTwenty">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#panelsStayOpen-collapseTwenty" aria-expanded="false"

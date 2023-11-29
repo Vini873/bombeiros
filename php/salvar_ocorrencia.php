@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir o arquivo de conexão com o banco de dados
-    include('dbconnect.php');
+    include('dbdb.php');
 
     // Receber dados do formulário para ficha_paciente
     $data_ocorrencia = $_POST['date'];
