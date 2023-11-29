@@ -369,10 +369,8 @@ if (mysqli_query($conn, $sql_detalhes_viagem)) {
 
 // Dados a serem inseridos no banco de dados
 $oQueAconteceu = $_POST['oqueAconteceu'];
-$flexRadioDefault1 = isset($_POST['aconteceu_outras_vezes']) ? 1 : 0;
+$aconteceuOutrasVezes = isset($_POST['aconteceuOutrasVezes']) ? $_POST['aconteceuOutrasVezes'] : "";
 $quandoAconteceu = $_POST['quandoAconteceu'];
-$flexRadioDefault2 = isset($_POST['problema_saude']) ? 1 : 0;
-$quaisProblemas = $_POST['quaisProblemas'];
 
 
 // Montar a consulta SQL

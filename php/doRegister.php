@@ -2628,7 +2628,7 @@
         </div>
     </div>
     <!--                   -->
-    <!-- ✘ Termo de recusa -->
+    <!-- ✓ Termo de recusa -->
     <!--                   -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingFifteen">
@@ -2666,7 +2666,7 @@
     </div>
    
     <!--                              -->
-    <!-- ✘ Anamnese Emergência Médica -->
+    <!--  Anamnese Emergência Médica -->
     <!--                              -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingSeventeen">
@@ -3197,7 +3197,7 @@
                 </div>
             </div>
         </div>
-        <input class="btn btn-primary" type="submit" value="Enviar" style="width: 100%;">
+        <input class="btn btn-primary" type="submit" value="Enviar" style="width: 100%; color: red">
         </form>
     </div>
     </div>
