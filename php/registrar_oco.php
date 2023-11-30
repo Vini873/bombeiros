@@ -841,7 +841,7 @@
             <div class="accordion-body">
                 <div class="container">
                     <div class="d-flex justify-content-center ">
-                        <img src="../images/corpohumano.png" class="mt-3 rounded col-xs-6 col-md-3">
+                        <img src="../IMAGENS/corpohumano.png" class="mt-3 rounded col-xs-6 col-md-3">
                     </div>
                     <div class="container">
                         <div class="row">
@@ -3052,6 +3052,11 @@
         <input class="btn btn-primary" type="submit" value="Enviar" style="width: 50%; background-color: red">
         </div>
         </form>
+        <footer class="text-center text-lg-start">
+            <div class="text-center p-3">
+                &copy; 2023 Bombeiros/Projeto Noar. Todos os direitos reservados.
+            </div>
+        </footer>
     </div>
     </div>
 

@@ -77,70 +77,12 @@
     </button>
     </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <?php
-    // Inicia a sessão
-    session_start();
-
-    // Verifica se há uma mensagem de cadastro na sessão
-    if (isset($_SESSION['cadastro_msg'])) {
-        $cadastro_msg = $_SESSION['cadastro_msg'];
-        unset($_SESSION['cadastro_msg']);
-
-        // Exibe o alerta de cadastro
-        echo '<script>
-            Swal.fire({
-                icon: "success",
-                title: "Cadastro realizado com sucesso!",
-                text: "' . $cadastro_msg . '",
-                timer: 3000, // 3 segundos
-                showConfirmButton: false
-            });
-        </script>';
-    }
-
-    // Verifica se há uma mensagem de popup na sessão
-    if (isset($_SESSION['popup_msg'])) {
-        $popup_msg = $_SESSION['popup_msg'];
-        unset($_SESSION['popup_msg']);
-
-        // Exibe o popup de boas-vindas personalizado
-        echo '<script>
-            Swal.fire({
-                icon: "success",
-                title: "Bem-vindo(a)!",
-                text: "' . $popup_msg . '",
-                timer: 3000, // 3 segundos
-                showConfirmButton: false,
-                customClass: {
-                    popup: "swal-custom-popup",
-                    title: "swal-custom-title",
-                    content: "swal-custom-content"
-                }
-            });
-        </script>';
-    }
-    ?>
-    <script>
-  document.querySelector('.botão').addEventListener('click', function() {
-    // Obtém o nome de usuário da sessão
-   
-
-    // Exibe o alerta de compra realizada com sucesso
-    Swal.fire({
-      icon: 'success',
-      title: 'Compra realizada com sucesso!',
-      text: 'Obrigado, ' + nomeUsuario + '!',
-      timer: 3000, // 3 segundos
-      showConfirmButton: false
-    });
-
-    // Redireciona para a página inicial após 3 segundos
-    setTimeout(function() {
-      window.location.href = 'paginaInicial.php';
-    }, 3000);
-  });
-</script>
+<footer class="text-center text-lg-start">
+            <div class="text-center p-3">
+                &copy; 2023 Bombeiros/Projeto Noar. Todos os direitos reservados.
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </body>
 </html>
