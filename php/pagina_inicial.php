@@ -11,23 +11,16 @@
 
 </head>
 <body>
-<div class="container-fluid m-0 p-0">
+    <div class="container-fluid m-0 p-0">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block p-0">
                 <div class="container" style="max-width: 2000px;">
                     <a class="navbar-brand mb-0 h1" href="#">S.A. Bombeiros</a>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Página Inicial</a>
-                        </li>
+                            <a class="nav-link" href="pagina_inicial.php">Página Inicial</a>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="login.php">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -54,6 +47,9 @@
 
                     <div class="offcanvas-body">
                         <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="pagina_inicial.php">Página Inicial</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
                             </li>

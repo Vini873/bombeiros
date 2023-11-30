@@ -20,16 +20,9 @@
                     <a class="navbar-brand mb-0 h1" href="#">S.A. Bombeiros</a>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Página Inicial</a>
-                        </li>
+                            <a class="nav-link" href="pagina_inicial.php">Página Inicial</a>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="login.php">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -57,16 +50,10 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Página Inicial</a>
+                                <a class="nav-link" href="pagina_inicial.php">Página Inicial</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sobre</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contato</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link" href="login.php">Login</a>
                             </li>
                         </ul>
                     </div>
