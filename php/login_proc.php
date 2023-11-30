@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
-
     
 
     if ($result->num_rows == 1) {
@@ -37,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email']) && isset($_PO
                 $_SESSION['admin'] = true;
             }
 
+            
             // Fecha a conexão com o banco de dados
             $stmt->close();
             $conn->close();

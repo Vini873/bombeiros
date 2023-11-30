@@ -1,65 +1,55 @@
 <?php
-include('dbconnect.php');
-session_start();
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Inclua o arquivo de configuração do banco de dados
+    include_once "dbdb.php"; // Substitua "config.php" pelo nome do seu arquivo de configuração
 
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $cpf = $_POST['CPF'];
+    // Obtém os dados do formulário
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $cpf = $_POST["cpf"];
 
-    // Verificar se o CPF tem 11 dígitos
-    if (strlen($cpf) !== 11) {
-    $_SESSION['cadastro_erro_cpf'] = 'O CPF digitado é inválido.';
-    header("Location: Registro.php");
-    exit();
-    }
+    // Verifica se o e-mail já está cadastrado
+    $email_check_query = "SELECT * FROM usuario WHERE email_usuario='$email' LIMIT 1";
+    $result_email = $conn->query($email_check_query);
+    $user_email = $result_email->fetch_assoc();
 
-    // Verificar se o e-mail já está cadastrado
-    $verificar_email = "SELECT * FROM usuario WHERE email_usuario = ?";
-    $stmt_verificar_email = $conn->prepare($verificar_email);
-    $stmt_verificar_email->bind_param('s', $email);
-    $stmt_verificar_email->execute();
-    $result_verificar_email = $stmt_verificar_email->get_result();
+    // Verifica se o CPF já está cadastrado
+    $cpf_check_query = "SELECT * FROM usuario WHERE CPF_usuario='$cpf' LIMIT 1";
+    $result_cpf = $conn->query($cpf_check_query);
+    $user_cpf = $result_cpf->fetch_assoc();
 
-    if ($result_verificar_email->num_rows > 0) {
-        $_SESSION['cadastro_erro_email'] = 'Este e-mail já está cadastrado.';
-        header("Location: Registro.php");
+    if ($user_email) {
+        // E-mail já cadastrado, redireciona para a página de registro com mensagem de erro
+        header("Location: registro.php?error=email_duplicado");
         exit();
     }
 
-    // Verificar se o CPF já está cadastrado
-    $verificar_cpf = "SELECT * FROM usuario WHERE CPF_usuario = ?";
-    $stmt_verificar_cpf = $conn->prepare($verificar_cpf);
-    $stmt_verificar_cpf->bind_param('s', $cpf);
-    $stmt_verificar_cpf->execute();
-    $result_verificar_cpf = $stmt_verificar_cpf->get_result();
-
-    if ($result_verificar_cpf->num_rows > 0) {
-        $_SESSION['cadastro_erro_cpf'] = 'Este CPF já está cadastrado.';
-        header("Location: Registro.php");
+    if ($user_cpf) {
+        // CPF já cadastrado, redireciona para a página de registro com mensagem de erro
+        header("Location: registro.php?error=cpf_duplicado");
         exit();
     }
 
-    // Inserção no banco de dados
-    $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, CPF_usuario) VALUES (?, ?, ?, ?)";
+    // Insere os dados no banco de dados
+    $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario, CPF_usuario) VALUES ('$name', '$email', '$password', '$cpf')";
 
-    $stmt = $conn->prepare($sql);
-
-    // Vincular os valores das variáveis à consulta preparada
-    $stmt->bind_param('ssss', $nome, $email, $senha, $cpf);
-
-    if ($stmt->execute()) {
-        // O INSERT foi bem-sucedido
-        $_SESSION['cadastro_sucesso'] = 'Usuário cadastrado com sucesso!';
-        header("Location: Registro.php");
+    if ($conn->query($sql) === TRUE) {
+        // Registro bem-sucedido, você pode redirecionar para uma página de sucesso se necessário
+        header("Location: pagina_inicial.php");
         exit();
     } else {
-        $_SESSION['cadastro_erro'] = 'Erro ao inserir usuário no banco de dados: ' . $stmt->error;
-        header("Location: Registro.php");
+        // Erro ao registrar, redireciona para a página de registro com mensagem de erro
+        header("Location: registro.php?error=erro_registro");
         exit();
     }
-}
 
-$conn->close();
+    // Fecha a conexão com o banco de dados
+    $conn->close();
+} else {
+    // Se o formulário não foi enviado, redirecione para a página de registro
+    header("Location: registro.php");
+    exit();
+}
 ?>

@@ -11,12 +11,36 @@
 
 </head>
 <body>
-    <div class="container-fluid m-0 p-0">
+<div class="container-fluid m-0 p-0">
         <header>
+            <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block p-0">
+                <div class="container" style="max-width: 2000px;">
+                    <a class="navbar-brand mb-0 h1" href="#">S.A. Bombeiros</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
             <div class="d-lg-none">
 
                 <nav class="navbar navbar-light bg-light p-0">
                     <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                         <a class="navbar-brand" href="#">S.A. Bombeiros</a>
                     </div>
                 </nav>
@@ -28,7 +52,13 @@
                             aria-label="Fechar"></button>
                     </div>
 
-                    
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">Login</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -96,5 +126,25 @@
         </script>';
     }
     ?>
+    <script>
+  document.querySelector('.botão').addEventListener('click', function() {
+    // Obtém o nome de usuário da sessão
+   
+
+    // Exibe o alerta de compra realizada com sucesso
+    Swal.fire({
+      icon: 'success',
+      title: 'Compra realizada com sucesso!',
+      text: 'Obrigado, ' + nomeUsuario + '!',
+      timer: 3000, // 3 segundos
+      showConfirmButton: false
+    });
+
+    // Redireciona para a página inicial após 3 segundos
+    setTimeout(function() {
+      window.location.href = 'paginaInicial.php';
+    }, 3000);
+  });
+</script>
 </body>
 </html>
